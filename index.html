@@ -36,9 +36,9 @@
 				<div class='global-params'>
 					<h2>Global</h2>
 					<div class='params-wrapper'>
-						<p>resolution</p>
-						<input type='number' id='resolution' onClick='this.select();' onkeyup='formChanged()' onchange='formChanged()'>
-						<p>play speed</p>
+						<!-- <p>resolution</p>
+						<input type='number' id='resolution' onClick='this.select();' onkeyup='formChanged(), reso()' onchange='formChanged(), reso()'> -->
+						<p>speed (in ms)</p>
 						<input type='number' id='play-speed' onClick='this.select();' onkeyup='formChanged()' onchange='formChanged()'>
 					</div>
 				</div>
@@ -79,8 +79,8 @@
 
 		// global variables
 		let pixelSize = 10;
-		const xPixels = 500 / pixelSize;
-		const yPixels = 500 / pixelSize;
+		let xPixels = 500 / pixelSize;
+		let yPixels = 500 / pixelSize;
 		let playSpeed = 100;
 
 
@@ -128,7 +128,7 @@
 
 
 	// side bar stuff
-		document.getElementById('resolution').value = pixelSize;
+		// document.getElementById('resolution').value = pixelSize;
 		document.getElementById('play-speed').value = playSpeed;
 
 
@@ -141,6 +141,12 @@
 		document.getElementById('sharkFertRate').value = sharkFertRate;
 
 
+		// function reso() {
+		// 	xPixels = 500 / pixelSize;
+		// 	yPixels = 500 / pixelSize;
+		// 	console.log({xPixels, yPixels});
+		// }
+		
 
 		function formChanged() {
 			pixelSize = Number(document.getElementById('resolution').value);
